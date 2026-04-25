@@ -33,6 +33,15 @@ export default function App() {
 
   const [activeSection, setActiveSection] = useState<SectionId>('hero');
 
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/Aashima_Sadana_CV.txt';
+    link.download = 'Aashima_Sadana_CV.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -370,6 +379,7 @@ export default function App() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    onClick={handleDownloadCV}
                     className="w-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold py-6 rounded-2xl flex items-center justify-center space-x-3 group transition-all shadow-xl shadow-blue-600/30"
                   >
                     <Download className="w-6 h-6" />
