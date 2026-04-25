@@ -103,9 +103,10 @@ export default function App() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={handleDownloadCV}
                 className="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-white hover:bg-white/10 transition-all text-sm font-medium"
               >
-                Contact
+                Download CV
               </motion.button>
             </div>
           </nav>
